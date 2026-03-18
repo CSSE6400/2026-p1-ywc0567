@@ -7,6 +7,7 @@ api = Blueprint('api', __name__, url_prefix='/api/v1')
 def health():
     return jsonify({"status": "ok"})
 
+
 @api.route('/todos', methods=['GET'])
 def get_todos():
     return jsonify([{
@@ -18,6 +19,7 @@ def get_todos():
         "created_at": "2026-02-20T14:00:00",
         "updated_at": "2026-02-20T14:00:00"
     }])
+
 
 @api.route('/todos', methods=['POST'])
 def create_todo():
@@ -31,6 +33,7 @@ def create_todo():
         "updated_at": "2026-02-20T14:00:00"
         }), 201
 
+
 @api.route('/todos/<int:id>', methods=['PUT'])
 def update_todo(id):
     return jsonify({
@@ -42,6 +45,7 @@ def update_todo(id):
         "created_at": "2026-02-20T14:00:00",
         "updated_at": "2026-02-20T14:00:00"
         })
+
 
 @api.route('/todos/<int:id>', methods=['DELETE'])
 def delete_todo(id):
