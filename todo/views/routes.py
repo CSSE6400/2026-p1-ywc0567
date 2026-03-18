@@ -10,7 +10,7 @@ def health():
 
 @api.route('/todos', methods=['GET'])
 def get_todos():
-    return jsonify({
+    return jsonify([{
         "id": 1,
         "title": "Watch CSSE6400 Lecture",
         "description": "Watch the CSSE6400 lecture on ECHO360 for week 1",
@@ -18,7 +18,7 @@ def get_todos():
         "deadline_at": "2026-02-27T18:00:00",
         "created_at": "2026-02-20T14:00:00",
         "updated_at": "2026-02-20T14:00:00"
-    })
+    }])
 
 @api.route('/todos/<int:id>', methods=['GET'])
 def get_todo(id):
@@ -30,7 +30,7 @@ def get_todo(id):
         "deadline_at": "2026-02-27T18:00:00",
         "created_at": "2026-02-20T14:00:00",
         "updated_at": "2026-02-20T14:00:00"
-        })
+    })
 
 
 @api.route('/todos', methods=['POST'])
